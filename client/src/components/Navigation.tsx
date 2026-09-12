@@ -16,7 +16,7 @@ const socials = [
 ];
 
 function Brand({ light = false }: { light?: boolean }) {
-  return <a href="/" className="flex items-center gap-3 shrink-0"><img src="/manus-storage/Sparnuotis-black_99e4bcd7.svg" alt="Sparnuotis FPV logotipas" className={`w-24 h-10 object-fill ${light ? 'invert' : ''}`} /><span className={`text-[10px] tracking-[.17em] leading-none ${light ? 'text-white/65' : 'text-[#6d6a61]'}`}>FPV • KAUNAS</span></a>;
+  return <a href="/" className="flex items-center shrink-0"><img src="/manus-storage/Sparnuotis-black_99e4bcd7.svg" alt="Sparnuotis FPV logotipas" className={`w-36 h-12 object-fill ${light ? 'invert' : ''}`} /></a>;
 }
 
 export function Navigation() {
