@@ -38,21 +38,21 @@ export interface TeamMember {
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: 'nemuno-vingis-sunset',
-    title: 'Kauno senamiesčio ir Nemuno santakos skrydis',
+    id: 'autotoja',
+    title: 'Autotoja Toyota auto salonas',
     category: 'commercials',
-    categoryLabel: 'Miesto kinas / Reklama',
+    categoryLabel: 'Reklama',
     location: 'Kaunas, Lietuva',
-    year: '2026',
-    image: '/manus-storage/hero-fpv_aaf565b5.jpg',
+    year: '2025',
+    image: '/images/autotoja.webp',
     videoPlaceholderText: 'Žiūrėti 4K HDR skrydžio epizodą',
-    description: 'Vienu nepertraukiamu FPV manevru praskrieta pro Kauno pilies bokštus, nusileista virš upės vos 30 cm nuo vandens ir pakilta į auksinį saulėlydį.',
+    description: 'Vienu nepertraukiamu FPV skrydžiu praskrieta pro visą auto saloną.',
     stats: [
-      { label: 'Maks. greitis', value: '135 km/h' },
-      { label: 'Rezoliucija', value: '5.3K 60fps 10-bit' },
+      { label: 'Maks. greitis', value: '10 km/h' },
+      { label: 'Rezoliucija', value: '4k 60fps 10-bit' },
       { label: 'Formatas', value: 'D-Log M RAW' }
     ],
-    tags: ['Vieno kadro skrydis', 'Kaunas', '5.3K Cinema', 'Saulėlydis']
+    tags: ['Vieno kadro skrydis', 'Kaunas', '4K', 'Toyota', 'Autotoja']
   },
   {
     id: 'drift-action-kachergine',
@@ -126,52 +126,40 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 
 export const DRONE_SPECS: DroneSpec[] = [
   {
-    id: 'cinewhoop-35',
-    name: 'GELTONA CineProtekt 3.5"',
-    class: 'Uždarų patalpų ir NT drakonas',
-    speed: 'Iki 65 km/h (itin lėtas manevravimas)',
-    flightTime: '7-9 min vienu akumuliatoriumi',
-    camera: 'GoPro Naked 12 Black / DJI O3 Pro (4K 60/120fps)',
-    usage: 'Nekilnojamasis turtas, biurai, restoranai, žmonių apsuptyje',
-    safety: 'Propeleriai 100% apgaubti minkštu poliuretanu. Saugu liesti žmones ir baldus.',
-    description: 'Mūsų kasdienis arkliukas interjero filmavimams. Sveria vos 245 gramus, todėl gali skristi per durų plyšius, aplink skulptūras ar po baldais.',
-    highlightBadge: 'Saugiausias interjerui'
+    id: 'bee25',
+    name: 'Bee25',
+    class: 'Uždaroms patalpoms / Arti žmonių',
+    speed: 'Iki 60 km/h (itin lėtas manevravimas)',
+    flightTime: '5-9 min/baterija - virš 30 baterijų',
+    camera: 'DJI O4 Pro (4K 60/120fps)',
+    usage: 'Nekilnojamasis turtas, koncertai, įmonių renginiai, vestuvės',
+    safety: 'Propeleriai turi apsaugas. Saugu prie žmonių / baldų.',
+    description: 'Mūsų kasdienis arkliukas interjero filmavimams. Mažiukas, todėl gali skristi per koridorius, įskristi pro langus, duris.',
+    highlightBadge: 'Saugiausias viduje ir šalia žmonių'
   },
   {
-    id: 'cinelifter-x8',
-    name: 'GELTONA Heavy-Lift X8 Pro',
-    class: 'Kino kamerų nešėjas (Cinema Lifter)',
-    speed: 'Iki 150 km/h',
-    flightTime: '8-12 min',
-    camera: 'RED Komodo 6K / BMPCC 6K / Sony FX3 su anamorfine optika',
-    usage: 'Didelio biudžeto TV reklamos, vaidybiniai filmai, prabangūs prekių ženklai',
-    safety: '8 galingi varikliai su koaksialine dubliavimo sistema – net sugedus varikliui saugiai nusileidžia.',
-    description: 'Tikras kino žvėris. Skraidina pilno kadro kino kameras su belaidžiu fokusavimu (Focus Puller) ir realaus laiko režisieriaus monitoriumi.',
-    highlightBadge: 'Didžiausiam kino biudžetui'
+    id: 'Master 3x',
+    name: 'Master 3x',
+    class: '',
+    speed: 'Iki 140 km/h',
+    flightTime: '4.5 min/baterija - virš 30 baterijų',
+    camera: 'DJI O4 Pro (4K 60/120fps)',
+    usage: 'Naudojame ten kur reikia greičio. Pvz. Filmuojant automobilius, lėktuvus ir t.t.',
+    safety: 'Saugumo ir greičio balansas. Patikima ryšio sistema',
+    description: 'Naudojame ten kur reikia greičio. Pvz. Filmuojant automobilius, lėktuvus ir t.t.',
+    highlightBadge: 'Greitis ne bėda'
   },
   {
-    id: 'apex-freestyle-5',
-    name: 'GELTONA Vector 5" Pursuit',
-    class: 'Didelio greičio veiksmo ir sporto drakonas',
-    speed: 'Iki 170 km/h (0–100 km/h per 1.3 s)',
+    id: 'Master 5 v3',
+    name: 'Master 5 v3',
+    class: '',
+    speed: 'Iki 170 km/h',
     flightTime: '4-6 min intensyvaus lėkimo',
-    camera: 'GoPro 13 Black 5.3K 10-bit / Full Gyro data',
+    camera: 'DJI O4 Pro (4K 60/120fps) ',
     usage: 'Driftas, motociklai, lenktyniniai laivai, kalnų dviračiai, ekstremalus sportas',
     safety: 'Ultra tvirtas 6mm anglies pluoštas, GPS gelbėjimo sistema, didelio atstumo ryšys.',
-    description: 'Sukurtas ten, kur reikalingas maksimalus pagreitis ir aštrūs posūkiai. Geba sekti 140 km/h slystančius automobilius per centimetrus nuo asfalto.',
-    highlightBadge: 'Galingiausias greičiui'
-  },
-  {
-    id: 'long-range-7',
-    name: 'GELTONA SkyScout 7" Long Range',
-    class: 'Tolimųjų distancijų ir kalnų/upų skrydžiai',
-    speed: 'Iki 115 km/h',
-    flightTime: '20-25 min (Li-Ion baterijos)',
-    camera: 'DJI O4 HD + 4K HDR Cinema',
-    usage: 'Kraštovaizdžiai, miškai, upių vingiai, architektūriniai panoraminiai kadrai',
-    safety: 'Dual GPS, Return-to-Home automatika, kryžminis ryšio dubliavimas iki 10 km.',
-    description: 'Idealiai tinka, kai reikia aprėpti didelius plotus – Kauno marias, piliakalnius ar dideles infrastruktūros statybas iš paukščio skrydžio.',
-    highlightBadge: 'Ilgiausias skrydžio laikas'
+    description: 'Sukurtas ten, kur reikalingas maksimalus pagreitis ir aštrūs posūkiai. Geba sekti 180 km/h slystančius automobilius per centimetrus nuo asfalto.',
+    highlightBadge: 'Pats greičiausias ir galingiausias'
   }
 ];
 
@@ -179,69 +167,71 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Markas',
     role: 'Pilotas ir projektų vadovas',
-    callsign: '„Markas“',
-    experience: 'Skrydžio planavimas, klientų komunikacija ir pilotavimas',
+    callsign: '',
+    experience: 'Įkūrėjas / projektų planavimas, komunikacija ir pilotavimas',
     gearPreference: '5" cinematic rig, DJI Goggles ir aiškus kadro planas',
-    image: '/manus-storage/pilot-portrait_a9dfddaf.jpg',
-    bio: 'Markas sujungia dvi puses: žmogų, kuris klauso kliento, ir pilotą, kuris mato kadrą dar prieš pakildamas. Jis koordinuoja lokaciją, saugą, komandą ir pasirūpina, kad filmavimo diena būtų rami bei produktyvi.',
+    image: '/images/dron1.webp',
+    bio: '', //Markas sujungia dvi puses: žmogų, kuris klauso kliento, ir pilotą, kuris mato kadrą dar prieš pakildamas. Jis koordinuoja lokaciją, saugą, komandą ir pasirūpina, kad filmavimo diena būtų rami bei produktyvi.
     certifications: ['Skrydžių planavimas ir rizikos vertinimas', 'Komercinių skrydžių procedūros', 'Projekto koordinavimas filmavimo aikštelėje']
   },
   {
     name: 'Valdemaras',
-    role: 'FPV pilotas',
-    callsign: '„Valdas“',
-    experience: 'Tikslūs vieno kadro skrydžiai ir veiksmo scenos',
+    role: 'FPV pilotas / Pardavimai',
+    callsign: '',
+    experience: 'Renginiai, automobiliai, NT',
     gearPreference: 'Greitas 5" pursuit dronas ir GoPro 13',
-    image: '/manus-storage/pilot-portrait_a9dfddaf.jpg',
-    bio: 'Valdemaras mėgsta kadrus, kuriuose nėra vietos antram bandymui. Jo stiprybė – švarios trajektorijos, greitas reagavimas ir gebėjimas išlaikyti ritmą net tada, kai objektas juda nenuspėjamai.',
+    image: '/images/dron1.webp',
+    bio: '', //Valdemaras mėgsta kadrus, kuriuose nėra vietos antram bandymui. Jo stiprybė – švarios trajektorijos, greitas reagavimas ir gebėjimas išlaikyti ritmą net tada, kai objektas juda nenuspėjamai.
     certifications: ['FPV kino skrydžių praktika', 'Saugos protokolai lauko lokacijose', 'Veiksmo scenų paruošimas']
   },
   {
     name: 'Gustas',
     role: 'FPV pilotas',
-    callsign: '„Gustas“',
-    experience: 'Interjerai, renginiai ir skrydžiai žmonių aplinkoje',
+    callsign: '',
+    experience: 'Auto renginiai, šventės, vestuvės',
     gearPreference: 'Cinewhoop su 360° propelerių apsaugomis',
-    image: '/manus-storage/tech-engineer-portrait_98acea2a.jpg',
-    bio: 'Gustas geriausiai jaučiasi ten, kur reikia artumo: tarp durų, žmonių, šviesų ir architektūros. Jis moka sulėtinti skrydį tiek, kad žiūrovas pastebėtų detales, bet kadras neprarastų gyvybės.',
+    image: '/images/dron1.webp',
+    bio: '', //Gustas geriausiai jaučiasi ten, kur reikia artumo: tarp durų, žmonių, šviesų ir architektūros. Jis moka sulėtinti skrydį tiek, kad žiūrovas pastebėtų detales, bet kadras neprarastų gyvybės
     certifications: ['Indoor Cinewhoop skrydžiai', 'Darbas su renginių komandomis', 'Lokacijos saugos patikra']
   },
   {
     name: 'Justas',
     role: 'Montavimas, spalvos ir socialiniai tinklai',
-    callsign: '„Justas“',
-    experience: 'Nuo žaliavos iki paruošto klipo skirtingiems kanalams',
+    callsign: '',
+    experience: 'Sugeba paversti atskirus klipus į vieną profesionalų video',
     gearPreference: 'DaVinci Resolve, garso dizainas ir vertikalūs formatai',
-    image: '/manus-storage/tech-engineer-portrait_98acea2a.jpg',
-    bio: 'Justas iš skrydžio medžiagos sudėlioja istoriją: parenka tempą, sutvarko spalvas, sukuria garso pojūtį ir paruošia versijas svetainei, reklamai ar socialiniams tinklams. Jis padeda gerą kadrą paversti veikiančiu turiniu.',
+    image: '/images/dron1.webp',
+    bio: '', //Justas iš skrydžio medžiagos sudėlioja istoriją: parenka tempą, sutvarko spalvas, sukuria garso pojūtį ir paruošia versijas svetainei, reklamai ar socialiniams tinklams. Jis padeda gerą kadrą paversti veikiančiu turiniu.
     certifications: ['Montažas ir spalvų korekcija', 'Socialinių tinklų formatų paruošimas', 'Garso dizaino pagrindai']
   },
   {
     name: 'Dominykas Č.',
     role: 'Atsarginis pilotas ir techninė pagalba',
-    callsign: '„DČ“',
+    callsign: '',
     experience: 'Komandos rezervas ir įrangos paruošimas aikštelėje',
     gearPreference: 'Cinewhoop ir atsarginės sistemos',
-    image: '/manus-storage/gear-drone_d25d5c2f.jpg',
-    bio: 'Dominykas Č. užtikrina, kad filmavimo dieną komanda turėtų planą B. Jis tikrina ryšį, baterijas ir atsarginius komponentus, o prireikus perima pultą. Tai ramus žmogus, kurio labiausiai reikia tada, kai situacija tampa neplanuota.',
+    image: '/images/dron1.webp',
+    bio: '', //Dominykas Č. užtikrina, kad filmavimo dieną komanda turėtų planą B. Jis tikrina ryšį, baterijas ir atsarginius komponentus, o prireikus perima pultą. Tai ramus žmogus, kurio labiausiai reikia tada, kai situacija tampa neplanuota.
     certifications: ['Techninis pasiruošimas', 'Atsarginio piloto procedūros', 'Baterijų ir ryšio patikra']
   },
   {
     name: 'Dominykas B.',
     role: 'Techninė pagalba, transportas ir kamerinis filmavimas',
-    callsign: '„DB“',
+    callsign: '',
     experience: 'Aikštelės logistika, kameros ir įrangos judėjimas',
     gearPreference: 'Kameros, šviesa ir tvarkingas filmavimo planas',
-    image: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
-    bio: 'Dominykas B. pasirūpina tuo, ko žiūrovas nemato, bet dėl ko filmavimas vyksta sklandžiai: transportu, baterijų stotele, kamerine dalimi ir tvarkinga aikštelės logistika. Jis gali papildyti FPV skrydį ir įprastos kameros kadrais.',
+    image: '/images/dron1.webp',
+    bio: '', //Dominykas B. pasirūpina tuo, ko žiūrovas nemato, bet dėl ko filmavimas vyksta sklandžiai: transportu, baterijų stotele, kamerine dalimi ir tvarkinga aikštelės logistika. Jis gali papildyti FPV skrydį ir įprastos kameros kadrais.
     certifications: ['Filmavimo aikštelės logistika', 'Kamerinis filmavimas', 'Techninė pagalba ir transportas']
   }
 ];
+//Uzbaigti situs testimonials
 export const TESTIMONIALS = [
   { quote: 'Pagaliau gavome NT video, kuris ne tik parodo erdves, bet ir leidžia pajusti, kaip jose būti.', author: 'Aistė, NT projektų vadovė', type: 'Nekilnojamasis turtas' },
   { quote: 'Komanda labai aiškiai paaiškino visą procesą. Atvykome su idėja, o išėjome su filmu, kurį norisi rodyti klientams.', author: 'Mantas, renginio organizatorius', type: 'Renginys' },
   { quote: 'Svarbiausia – jie moka būti komanda. Kai reikia, aikštelėje turime daugiau nei vieną pilotą ir techninę pagalbą.', author: 'Tomas, reklamos prodiuseris', type: 'Reklama' }
 ];
+//Pagalvoti del faq
 export const FAQ_ITEMS = [
   {
     question: 'Ar skraidyti patalpų viduje yra saugu žmonėms ir baldams?',
