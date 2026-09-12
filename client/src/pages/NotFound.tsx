@@ -1,49 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
-  return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
-          </div>
-
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
-
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
-
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
+  return <div className="min-h-screen w-full flex items-center justify-center bg-[#f4f1e9] px-5"><div className="w-full max-w-lg text-center rounded-3xl border border-[#d9d4c8] bg-[#fcfbf7] p-10 shadow-sm"><div className="w-16 h-16 mx-auto rounded-full bg-[#efc400]/25 grid place-items-center mb-6"><AlertCircle className="h-8 w-8 text-[#9b7b00]" /></div><div className="font-display text-6xl font-bold text-[#27251f]">404</div><h1 className="font-display text-2xl font-bold mt-2">Puslapis nerastas</h1><p className="text-[#6d6a61] mt-3 mb-8">Šis puslapis neegzistuoja arba buvo perkeltas.</p><Button onClick={() => setLocation('/')} className="rounded-full bg-[#efc400] hover:bg-[#ffd72f] text-[#27251f] font-bold"><Home className="w-4 h-4 mr-2" />Grįžti į pradžią</Button></div></div>;
 }
