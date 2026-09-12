@@ -177,27 +177,71 @@ export const DRONE_SPECS: DroneSpec[] = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: 'Lukas Petrauskas',
-    role: 'Vyriausiasis FPV pilotas ir operaturius',
-    callsign: '„AcroLukas“',
-    experience: '8+ metai FPV ore, 1200+ skrydžio valandų',
-    gearPreference: 'RadioMaster AG01 Gimbals, DJI Goggles 3, 5" Custom Apex',
+    name: 'Markas',
+    role: 'Pilotas ir projektų vadovas',
+    callsign: '„Markas“',
+    experience: 'Skrydžio planavimas, klientų komunikacija ir pilotavimas',
+    gearPreference: '5" cinematic rig, DJI Goggles ir aiškus kadro planas',
     image: '/manus-storage/pilot-portrait_a9dfddaf.jpg',
-    bio: 'Nacionalinis FPV lenktynių prizininkas, vėliau perėjęs į kino industriją. Žino kiekvieną milimetrą ir vėjo gūsį. Tikslas ore – ne tiesiog apskristi objektą, o sukurti jausmą, kad žiūrovas pats skrenda sapne.',
-    certifications: ['CAA A1/A2/A3 licenzija', 'STS-01 specialioji kategorija', 'Draudimas komerciniams skrydžiams']
+    bio: 'Markas sujungia dvi puses: žmogų, kuris klauso kliento, ir pilotą, kuris mato kadrą dar prieš pakildamas. Jis koordinuoja lokaciją, saugą, komandą ir pasirūpina, kad filmavimo diena būtų rami bei produktyvi.',
+    certifications: ['Skrydžių planavimas ir rizikos vertinimas', 'Komercinių skrydžių procedūros', 'Projekto koordinavimas filmavimo aikštelėje']
   },
   {
-    name: 'Gabija Rakauskaitė',
-    role: 'Kino technikos inžinierė ir montažo režisierė',
-    callsign: '„VoltGabi“',
-    experience: '6 metai aviacinės elektronikos ir video gamybos srityje',
-    gearPreference: 'DaVinci Resolve Studio, RED Komodo, TBS Crossfire Ecosystem',
+    name: 'Valdemaras',
+    role: 'FPV pilotas',
+    callsign: '„Valdas“',
+    experience: 'Tikslūs vieno kadro skrydžiai ir veiksmo scenos',
+    gearPreference: 'Greitas 5" pursuit dronas ir GoPro 13',
+    image: '/manus-storage/pilot-portrait_a9dfddaf.jpg',
+    bio: 'Valdemaras mėgsta kadrus, kuriuose nėra vietos antram bandymui. Jo stiprybė – švarios trajektorijos, greitas reagavimas ir gebėjimas išlaikyti ritmą net tada, kai objektas juda nenuspėjamai.',
+    certifications: ['FPV kino skrydžių praktika', 'Saugos protokolai lauko lokacijose', 'Veiksmo scenų paruošimas']
+  },
+  {
+    name: 'Gustas',
+    role: 'FPV pilotas',
+    callsign: '„Gustas“',
+    experience: 'Interjerai, renginiai ir skrydžiai žmonių aplinkoje',
+    gearPreference: 'Cinewhoop su 360° propelerių apsaugomis',
     image: '/manus-storage/tech-engineer-portrait_98acea2a.jpg',
-    bio: 'Atsakinga už drono telemetrijos suderinamumą, Gyroflow stabilizavimo kreives, spalvų gradavimą (Color grading) ir saugumo protokolus aikštelėje. Ji užtikrina, kad žaliava virstų paruoštu emociniu sprogimu.',
-    certifications: ['DaVinci Certified Colorist', 'Lietuvos bepiločių orlaivių asociacijos narė', 'Saugumo vadovė filmavimo aikštelėje']
+    bio: 'Gustas geriausiai jaučiasi ten, kur reikia artumo: tarp durų, žmonių, šviesų ir architektūros. Jis moka sulėtinti skrydį tiek, kad žiūrovas pastebėtų detales, bet kadras neprarastų gyvybės.',
+    certifications: ['Indoor Cinewhoop skrydžiai', 'Darbas su renginių komandomis', 'Lokacijos saugos patikra']
+  },
+  {
+    name: 'Justas',
+    role: 'Montavimas, spalvos ir socialiniai tinklai',
+    callsign: '„Justas“',
+    experience: 'Nuo žaliavos iki paruošto klipo skirtingiems kanalams',
+    gearPreference: 'DaVinci Resolve, garso dizainas ir vertikalūs formatai',
+    image: '/manus-storage/tech-engineer-portrait_98acea2a.jpg',
+    bio: 'Justas iš skrydžio medžiagos sudėlioja istoriją: parenka tempą, sutvarko spalvas, sukuria garso pojūtį ir paruošia versijas svetainei, reklamai ar socialiniams tinklams. Jis padeda gerą kadrą paversti veikiančiu turiniu.',
+    certifications: ['Montažas ir spalvų korekcija', 'Socialinių tinklų formatų paruošimas', 'Garso dizaino pagrindai']
+  },
+  {
+    name: 'Dominykas Č.',
+    role: 'Atsarginis pilotas ir techninė pagalba',
+    callsign: '„DČ“',
+    experience: 'Komandos rezervas ir įrangos paruošimas aikštelėje',
+    gearPreference: 'Cinewhoop ir atsarginės sistemos',
+    image: '/manus-storage/gear-drone_d25d5c2f.jpg',
+    bio: 'Dominykas Č. užtikrina, kad filmavimo dieną komanda turėtų planą B. Jis tikrina ryšį, baterijas ir atsarginius komponentus, o prireikus perima pultą. Tai ramus žmogus, kurio labiausiai reikia tada, kai situacija tampa neplanuota.',
+    certifications: ['Techninis pasiruošimas', 'Atsarginio piloto procedūros', 'Baterijų ir ryšio patikra']
+  },
+  {
+    name: 'Dominykas B.',
+    role: 'Techninė pagalba, transportas ir kamerinis filmavimas',
+    callsign: '„DB“',
+    experience: 'Aikštelės logistika, kameros ir įrangos judėjimas',
+    gearPreference: 'Kameros, šviesa ir tvarkingas filmavimo planas',
+    image: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
+    bio: 'Dominykas B. pasirūpina tuo, ko žiūrovas nemato, bet dėl ko filmavimas vyksta sklandžiai: transportu, baterijų stotele, kamerine dalimi ir tvarkinga aikštelės logistika. Jis gali papildyti FPV skrydį ir įprastos kameros kadrais.',
+    certifications: ['Filmavimo aikštelės logistika', 'Kamerinis filmavimas', 'Techninė pagalba ir transportas']
   }
 ];
-
+export const TESTIMONIALS = [
+  { quote: 'Pagaliau gavome NT video, kuris ne tik parodo erdves, bet ir leidžia pajusti, kaip jose būti.', author: 'Aistė, NT projektų vadovė', type: 'Nekilnojamasis turtas' },
+  { quote: 'Komanda labai aiškiai paaiškino visą procesą. Atvykome su idėja, o išėjome su filmu, kurį norisi rodyti klientams.', author: 'Mantas, renginio organizatorius', type: 'Renginys' },
+  { quote: 'Svarbiausia – jie moka būti komanda. Kai reikia, aikštelėje turime daugiau nei vieną pilotą ir techninę pagalbą.', author: 'Tomas, reklamos prodiuseris', type: 'Reklama' }
+];
 export const FAQ_ITEMS = [
   {
     question: 'Ar skraidyti patalpų viduje yra saugu žmonėms ir baldams?',
