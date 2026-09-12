@@ -4,6 +4,7 @@ import { DRONE_SPECS, FAQ_ITEMS, PORTFOLIO_ITEMS, TEAM_MEMBERS, TESTIMONIALS, Po
 import { Navigation, Footer } from '@/components/Navigation';
 import ClientNeedsWalkthrough from '@/components/ClientNeedsWalkthrough';
 import { VideoModal } from '@/components/VideoModal';
+import Seo, { SITE } from '@/components/Seo';
 
 const serviceSteps = [
   { n: '01', title: 'Pokalbis ir planas', text: 'Aptariame jūsų norus ir išsigryniname video tikslinę auditoriją' },
@@ -20,7 +21,9 @@ export default function Home() {
   const filtered = category === 'all' ? PORTFOLIO_ITEMS.slice(0, 5) : PORTFOLIO_ITEMS.filter(item => item.category === category);
   const drone = DRONE_SPECS.find(item => item.id === droneId) || DRONE_SPECS[0];
 
+  const businessJsonLd = { '@context': 'https://schema.org', '@type': 'ProfessionalService', '@id': `${SITE}/#business`, name: 'Sparnuotis FPV', url: `${SITE}/`, logo: `${SITE}/manus-storage/Sparnuotis-black_99e4bcd7.svg`, description: 'FPV dronų filmavimo ir video gamybos komanda Kaune, Lietuvoje ir Europoje.', email: 'markas@sparnuotis.lt', telephone: '+37068575900', address: { '@type': 'PostalAddress', addressLocality: 'Kaunas', addressCountry: 'LT' }, areaServed: ['Kaunas', 'Vilnius', 'Klaipėda', 'Lithuania', 'Europe'], sameAs: ['https://www.instagram.com/sparnuotisfpv/', 'https://www.tiktok.com/@sparnuotislt', 'https://youtube.com/channel/UCWTB2v7oCzXqE2qiZ2LSpyw/'] };
   return <div className="min-h-screen bg-[#f4f1e9] text-[#27251f]">
+    <Seo title="Sparnuotis | FPV dronų filmavimas Kaune, Lietuvoje ir Europoje" description="Sparnuotis kuria profesionalų FPV dronų video Kaune, Lietuvoje ir Europoje: NT, reklamos, renginiai, sportas, Reels ir tiesioginės transliacijos." path="/" jsonLd={businessJsonLd} />
     <Navigation />
 
     <section className="relative min-h-[720px] flex items-end overflow-hidden bg-[#27251f] text-white">

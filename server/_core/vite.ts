@@ -58,7 +58,16 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  app.use(express.static(distPath, {
+    setHeaders: (res, filePath) => {
+      const isImmutableAsset = filePath.includes(`${path.sep}assets${path.sep}`) || filePath.includes(`${path.sep}images${path.sep}`);
+      if (isImmutableAsset) {
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      } else if (filePath.endsWith("index.html") || filePath.endsWith("sitemap.xml") || filePath.endsWith("robots.txt")) {
+        res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
+      }
+    },
+  }));
 
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
