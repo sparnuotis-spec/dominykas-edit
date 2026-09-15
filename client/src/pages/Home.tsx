@@ -27,7 +27,9 @@ export default function Home() {
     <Navigation />
 
     <section className="relative min-h-[720px] flex items-end overflow-hidden bg-[#27251f] text-white">
-      <img src="/manus-storage/hero-fpv_aaf565b5.jpg" alt="FPV skrydis virš Kauno" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+      <video className="absolute inset-0 w-full h-full object-cover opacity-60" autoPlay muted loop playsInline preload="metadata" poster="/manus-storage/hero-fpv_aaf565b5.jpg" aria-label="FPV drono skrydis">
+        <source src="/images/hero2-1.mp4" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 hero-shade" />
       <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-20 pt-40"><div className="max-w-4xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#efc400]/50 bg-[#27251f]/40 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#efc400] mb-6"><span className="w-2 h-2 rounded-full bg-[#efc400]" />FPV kinematografija Kaune ir visoje Lietuvoje</div>
