@@ -23,6 +23,7 @@ export interface DroneSpec {
   safety: string;
   description: string;
   highlightBadge: string;
+  image: string;
 }
 
 export interface TeamMember {
@@ -135,7 +136,8 @@ export const DRONE_SPECS: DroneSpec[] = [
     usage: 'Nekilnojamasis turtas, koncertai, įmonių renginiai, vestuvės',
     safety: 'Propeleriai turi apsaugas. Saugu prie žmonių / baldų.',
     description: 'Mūsų kasdienis arkliukas interjero filmavimams. Mažiukas, todėl gali skristi per koridorius, įskristi pro langus, duris.',
-    highlightBadge: 'Saugiausias viduje ir šalia žmonių'
+    highlightBadge: 'Saugiausias viduje ir šalia žmonių',
+    image: '/images/bee25.webp'
   },
   {
     id: 'Master 3x',
@@ -147,7 +149,8 @@ export const DRONE_SPECS: DroneSpec[] = [
     usage: 'Naudojame ten kur reikia greičio. Pvz. Filmuojant automobilius, lėktuvus ir t.t.',
     safety: 'Saugumo ir greičio balansas. Patikima ryšio sistema',
     description: 'Naudojame ten kur reikia greičio. Pvz. Filmuojant automobilius, lėktuvus ir t.t.',
-    highlightBadge: 'Greitis ne bėda'
+    highlightBadge: 'Greitis ne bėda',
+    image: '/images/master3x.webp'
   },
   {
     id: 'Master 5 v3',
@@ -159,7 +162,8 @@ export const DRONE_SPECS: DroneSpec[] = [
     usage: 'Driftas, motociklai, lenktyniniai laivai, kalnų dviračiai, ekstremalus sportas',
     safety: 'Ultra tvirtas 6mm anglies pluoštas, GPS gelbėjimo sistema, didelio atstumo ryšys.',
     description: 'Sukurtas ten, kur reikalingas maksimalus pagreitis ir aštrūs posūkiai. Geba sekti 180 km/h slystančius automobilius per centimetrus nuo asfalto.',
-    highlightBadge: 'Pats greičiausias ir galingiausias'
+    highlightBadge: 'Pats greičiausias ir galingiausias',
+    image: '/images/master5v3.webp'
   }
 ];
 
