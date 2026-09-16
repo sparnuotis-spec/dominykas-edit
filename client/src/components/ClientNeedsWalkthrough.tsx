@@ -9,11 +9,11 @@ type FormState = { projectType: string; duration: string; editingNeeds: string; 
 const projectTypes = [
   { id: 'real-estate', label: 'Nekilnojamasis turtas', description: 'Butai, namai, biurai, viešbučiai ir NT projektai.', icon: Building2 },
   { id: 'sports', label: 'Sportas / veiksmas', description: 'Driftas, motociklai, lenktynės ir kitas greitis.', icon: Flame },
-  { id: 'events', label: 'Renginiai', description: 'Festivaliai, koncertai, įmonių ir privatūs renginiai.', icon: CalendarDays },
-  { id: 'livestream', label: 'Tiesioginė transliacija', description: 'Per HDMI arba SMTP serverį.', icon: Radio },
-  { id: 'commercials', label: 'Reklama / kino gamyba', description: 'Komerciniai klipai, filmai ir kampanijų turinys.', icon: Clapperboard },
-  { id: 'reels', label: 'Reels / socialiniai tinklai', description: 'Vienas arba keli vertikalūs klipai Instagram ir TikTok.', icon: Film },
-  { id: 'other', label: 'Kita idėja', description: 'Jei dar nežinote, ko reikia — padėsime išsigryninti.', icon: Sparkles },
+  { id: 'events', label: 'Renginiai', description: 'Festivaliai, koncertai, vestuvės, įmonių ir privatūs renginiai.', icon: CalendarDays },
+  { id: 'livestream', label: 'Tiesioginė transliacija', description: 'Per HDMI laidą arba SMTP serverį.', icon: Radio },
+  { id: 'commercials', label: 'Reklamos filmavimas', description: 'Komerciniai klipai, filmai ir kampanijų turinys.', icon: Clapperboard },
+  { id: 'reels', label: 'Reels / socialiniai tinklai', description: 'Vienas arba keli vertikalūs klipai Instagram/TikTok/Facebook.', icon: Film },
+  { id: 'other', label: 'Kita idėja', description: 'Nufilmuokite...', icon: Sparkles },
 ];
 const durations = [
   { id: 'hours', label: 'Kelios valandos', description: 'Trumpas filmavimas vienoje lokacijoje. Kaina skaičiuojama valandiniu tarifu.' },
