@@ -225,11 +225,13 @@ export const TEAM_MEMBERS: TeamMember[] = [
     certifications: ['Filmavimo aikštelės logistika', 'Kamerinis filmavimas', 'Techninė pagalba ir transportas']
   }
 ];
-//Uzbaigti situs testimonials
 export const TESTIMONIALS = [
-  { quote: 'Pagaliau gavome NT video, kuris ne tik parodo erdves, bet ir leidžia pajusti, kaip jose būti.', author: 'Aistė, NT projektų vadovė', type: 'Nekilnojamasis turtas' },
-  { quote: 'Komanda labai aiškiai paaiškino visą procesą. Atvykome su idėja, o išėjome su filmu, kurį norisi rodyti klientams.', author: 'Mantas, renginio organizatorius', type: 'Renginys' },
-  { quote: 'Svarbiausia – jie moka būti komanda. Kai reikia, aikštelėje turime daugiau nei vieną pilotą ir techninę pagalbą.', author: 'Tomas, reklamos prodiuseris', type: 'Reklama' }
+  { quote: 'Šitie vyrukai, toli eis! Nuo pirmų minučių supratau, kad bus gerai! Rezultatai wow! Ilgai neužtrukom filmuojant, puikus drono valdymas ir video vizijos turėjimas sukūrė nuostabų video. Už tokią kainą tikrai verta. Kelkit kainas, nes greit eilės bus!', author: 'Darius', type: 'Kliento atsiliepimas' },
+  { quote: 'Puikiai padarė video, padėjo greičiau parduoti savo butą. Viskas atlikta greitai, kokybiškai. Rekomenduoju!', author: 'Emilija', type: 'NT video' },
+  { quote: 'Puikiai nufilmavo mūsų renginį. Greitai, kokybiškai ir su gera energija viso proceso metu.', author: 'Lukas', type: 'Renginio filmavimas' },
+  { quote: 'Vestuvės buvo įamžintos nuostabiai! Drono kadrai suteikė video dar daugiau emocijos ir išskirtinumo', author: 'Karolina', type: 'Vestuvės' },
+  { quote: 'Užsakėme reklaminį video savo verslui – rezultatas pranoko lūkesčius. Profesionaliai, greitai ir labai kokybiškai.', author: 'Gabija', type: 'Reklaminis video' },
+  { quote: 'Labai patiko mūsų sodybos pristatymo video. Gražiai parodė erdves ir padėjo pritraukti daugiau klientų.', author: 'Justas', type: 'Sodybos video' }
 ];
 //Pagalvoti del faq
 export const FAQ_ITEMS = [
