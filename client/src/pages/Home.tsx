@@ -32,7 +32,7 @@ export default function Home() {
         <source src="https://sparnuotis.lt/wp-content/uploads/2026/05/Hero2-1.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 hero-shade" />
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-20 pt-40"><img src="/images/bee25.webp" alt="Bee25 FPV dronas" className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-[28%] max-w-[360px] max-h-[420px] object-contain drop-shadow-[0_24px_35px_rgba(0,0,0,.45)] pointer-events-none" /><div className="max-w-4xl lg:max-w-[62%]">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-20 pt-40"><img src="/images/bee25.webp" alt="Bee25 FPV dronas" className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-[48%] max-w-[680px] max-h-[760px] object-contain drop-shadow-[0_24px_35px_rgba(0,0,0,.45)] pointer-events-none" /><div className="max-w-4xl lg:max-w-[62%]">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#efc400]/50 bg-[#27251f]/40 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#efc400] mb-6"><span className="w-2 h-2 rounded-full bg-[#efc400]" />FPV kinematografija Kaune ir visoje Lietuvoje</div>
         <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-[.95] tracking-[-.05em] font-bold mb-7">Filmuojame.<br /><span className="text-[#efc400]">FPV dronais</span></h1>
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed mb-9">Nuo filmavimo 160 km/h greičiu paskui automobilį iki ramaus praskridimo pro kavinės duris.</p>
