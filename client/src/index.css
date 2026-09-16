@@ -61,7 +61,20 @@ body { background: #f4f1e9; color: #27251f; font-feature-settings: "cv02", "cv03
 
 .paper-grid { background-image: linear-gradient(rgba(39,37,31,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(39,37,31,.045) 1px, transparent 1px); background-size: 32px 32px; }
 .cream-panel { background: #ebe7de; }
-.hero-shade { background: linear-gradient(90deg, rgba(39,37,31,.94) 0%, rgba(39,37,31,.7) 48%, rgba(39,37,31,.14) 100%), linear-gradient(0deg, rgba(39,37,31,.82), transparent 62%); }
+.hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(39, 37, 31, 0.18) 0%,
+      rgba(39, 37, 31, 0.08) 48%,
+      rgba(39, 37, 31, 0.01) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(39, 37, 31, 0.12),
+      transparent 62%
+    );
+}
 .yellow-glow { box-shadow: 0 18px 38px -18px rgba(239,196,0,.65); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

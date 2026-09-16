@@ -10,7 +10,7 @@ const projectTypes = [
   { id: 'real-estate', label: 'Nekilnojamasis turtas', description: 'Butai, namai, biurai, viešbučiai ir NT projektai.', icon: Building2 },
   { id: 'sports', label: 'Sportas / veiksmas', description: 'Driftas, motociklai, lenktynės ir kitas greitis.', icon: Flame },
   { id: 'events', label: 'Renginiai', description: 'Festivaliai, koncertai, įmonių ir privatūs renginiai.', icon: CalendarDays },
-  { id: 'livestream', label: 'Tiesioginė transliacija', description: 'FPV signalas į režisūrinį pultą, ekranus ar eterį.', icon: Radio },
+  { id: 'livestream', label: 'Tiesioginė transliacija', description: 'Per HDMI arba SMTP serverį.', icon: Radio },
   { id: 'commercials', label: 'Reklama / kino gamyba', description: 'Komerciniai klipai, filmai ir kampanijų turinys.', icon: Clapperboard },
   { id: 'reels', label: 'Reels / socialiniai tinklai', description: 'Vienas arba keli vertikalūs klipai Instagram ir TikTok.', icon: Film },
   { id: 'other', label: 'Kita idėja', description: 'Jei dar nežinote, ko reikia — padėsime išsigryninti.', icon: Sparkles },
@@ -21,10 +21,10 @@ const durations = [
   { id: 'multi-day', label: 'Kelios filmavimo dienos', description: 'Didesnė gamyba Lietuvoje arba Europoje. Paruošiame individualią sąmatą.' },
 ];
 const editingOptions = [
-  { id: 'raw', label: 'Tik žaliava', description: 'Perduodame originalią medžiagą jūsų montuotojui. RAW galime išsiųsti, jei to reikia.' },
-  { id: 'long-form', label: 'Long-form video editing', description: 'Kelių minučių video su atranka, ritmu, spalvomis ir garsu.' },
-  { id: 'reels-editing', label: 'Reels video editing', description: 'Vienas arba keli vertikalūs Reels klipai Instagram, TikTok ar Shorts.' },
-  { id: 'raw-and-editing', label: 'Žaliava + montažas', description: 'Gaunate ir visą žaliavą, ir mūsų paruoštą galutinį video.' },
+  { id: 'raw', label: 'Tik RAW/žalia medžiaga', description: 'Perduodame originalią medžiagą jūsų montuotojui. RAW galime išsiųsti, jei to reikia.' },
+  { id: 'long-form', label: 'Ilgo formato video montažas', description: 'Kelių minučių video su muzika, geromis spalvomis.' },
+  { id: 'reels-editing', label: 'Reels video montažas', description: 'Vienas arba keli vertikalūs Reels klipai Instagram, TikTok ar Shorts.' },
+  { id: 'raw-and-editing', label: 'RAW/žalia medžiaga + montažas', description: 'Gaunate ir visą RAW/žalią medžiagą, ir mūsų paruoštą galutinį video.' },
 ];
 
 export default function ClientNeedsWalkthrough() {
