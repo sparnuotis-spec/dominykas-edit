@@ -16,7 +16,8 @@ const socials = [
 ];
 
 function Brand({ light = false }: { light?: boolean }) {
-  return <a href="/" className="flex items-center shrink-0"><img src="/images/Sparnuotis-black128.webp" alt="Sparnuotis FPV logotipas" className={`w-36 h-12 object-fill ${light ? 'invert' : ''}`} /></a>;
+  const logo = light ? '/images/text-light-white.svg' : '/images/text-dark-black.svg';
+  return <a href="/" className="flex items-center shrink-0"><img src={logo} alt="Sparnuotis FPV logotipas" className="w-36 h-12 object-fill" /></a>;
 }
 
 export function Navigation() {
