@@ -30,7 +30,7 @@ export default function Home() {
 
     <section className="relative min-h-[720px] flex items-end overflow-hidden bg-[#27251f] text-white">
       <video className="absolute inset-0 w-full h-full object-cover opacity-60" autoPlay muted loop playsInline preload="metadata" poster="/manus-storage/hero-fpv_aaf565b5.jpg" aria-label="FPV drono skrydis">
-        <source src="https://sparnuotis.lt/wp-content/uploads/2026/05/Hero2-1.mp4" type="video/mp4" />
+        <source src="/images/hero2-1.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 hero-shade" />
       <div className="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-8 pb-20 pt-40"><img src="/images/bee25.webp" alt="Bee25 FPV dronas" className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-[48%] max-w-[680px] max-h-[760px] object-contain drop-shadow-[0_24px_35px_rgba(0,0,0,.45)] pointer-events-none" /><div className="max-w-4xl lg:max-w-[62%]">
