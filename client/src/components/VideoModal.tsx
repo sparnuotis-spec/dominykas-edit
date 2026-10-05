@@ -1,5 +1,5 @@
-import React from 'react';
-import { X, Play, Volume2, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { X } from 'lucide-react';
 import { PortfolioItem } from '@/data';
 
 interface VideoModalProps {
@@ -8,10 +8,33 @@ interface VideoModalProps {
 }
 
 export function VideoModal({ item, onClose }: VideoModalProps) {
+  useEffect(() => {
+    if (!item) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [item, onClose]);
+
   if (!item) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="portfolio-video-title"
+      onClick={onClose}
+    >
       <div 
         className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden max-w-4xl w-full shadow-2xl relative"
         onClick={(e) => e.stopPropagation()}
@@ -22,43 +45,38 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
             <span className="text-xs font-semibold px-2.5 py-1 rounded bg-amber-400 text-black uppercase tracking-wider">
               {item.categoryLabel}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mt-2 font-display">
+            <h3 id="portfolio-video-title" className="text-xl sm:text-2xl font-bold text-white mt-2 font-display">
               {item.title}
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5">{item.location} • {item.year}</p>
           </div>
           <button
             onClick={onClose}
+            aria-label="Uždaryti vaizdo grotuvą"
             className="p-2 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white border border-zinc-800"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Video simulation screen */}
-        <div className="relative aspect-video bg-black overflow-hidden group">
-          <img 
-            src={item.image} 
-            alt={item.title} 
-            className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/30" />
-
-          {/* Center Play Button Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-            <div className="w-20 h-20 rounded-full bg-amber-400 text-black flex items-center justify-center shadow-2xl shadow-amber-400/50 hover:scale-110 transition-transform cursor-pointer">
-              <Play className="w-8 h-8 fill-black translate-x-0.5" />
-            </div>
-            <p className="text-white font-semibold text-lg mt-4 drop-shadow">
-              {item.videoPlaceholderText}
-            </p>
-            <p className="text-amber-400 text-xs font-medium mt-1">
-              [Demonstracinis kino peržiūros grotuvas su 4K 60fps telemetrijos duomenimis]
-            </p>
-          </div>
+        {/* Functional HTML5 video player */}
+        <div className="relative aspect-video bg-black overflow-hidden">
+          <video
+            className="w-full h-full object-contain"
+            controls
+            autoPlay
+            muted
+            playsInline
+            preload="metadata"
+            poster={item.image}
+            aria-label={item.title}
+          >
+            <source src={item.videoUrl} type="video/mp4" />
+            Jūsų naršyklė nepalaiko HTML5 vaizdo įrašų.
+          </video>
 
           {/* OSD Telemetry overlay (Simulates real FPV goggles view) */}
-          <div className="absolute top-4 left-4 font-mono text-[11px] text-amber-400/90 bg-black/60 px-3 py-1.5 rounded border border-amber-400/20 backdrop-blur-sm">
+          <div className="pointer-events-none absolute top-4 left-4 font-mono text-[11px] text-amber-400/90 bg-black/60 px-3 py-1.5 rounded border border-amber-400/20 backdrop-blur-sm">
             <div>FPV-OSD // 4K 60FPS // 10-BIT</div>
             <div>BATT: 24.8V (6S) | GYRO: LOCKED</div>
           </div>

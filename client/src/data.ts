@@ -6,6 +6,7 @@ export interface PortfolioItem {
   location: string;
   year: string;
   image: string;
+  videoUrl: string;
   videoPlaceholderText: string;
   description: string;
   stats: { label: string; value: string }[];
@@ -46,6 +47,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Kaunas, Lietuva',
     year: '2025',
     image: '/images/autotoja.webp',
+    videoUrl: '/images/hero2-1.mp4',
     videoPlaceholderText: 'Žiūrėti 4K HDR skrydžio epizodą',
     description: 'Vienu nepertraukiamu FPV skrydžiu praskrieta pro visą auto saloną.',
     stats: [
@@ -63,6 +65,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Nemuno žiedas, Kačerginė',
     year: '2026',
     image: '/manus-storage/sports-action-fpv_6397dda8.jpg',
+    videoUrl: '/images/comparison-fpv.mp4',
     videoPlaceholderText: 'Žiūrėti dinamišką lenktynių klipą',
     description: 'Agresyvus sekimas 10–20 cm atstumu nuo dūmų kamuolyje slystančio automobilio. Dinaminis pagreitis, atkartojantis vairuotojo trajektoriją be jokių kompromisų.',
     stats: [
@@ -80,6 +83,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Kauno r. (Kulautuva)',
     year: '2026',
     image: '/manus-storage/real-estate-fpv_775b2002.jpg',
+    videoUrl: '/images/hero2-1.mp4',
     videoPlaceholderText: 'Žiūrėti interjero ir eksterjero turą',
     description: 'Apsaugoto Cinewhoop drono lėtas, plastiškas skrydis iš pušyno terasos tiesiai pro atvirą vitriną į virtuvę, svetainę ir antro aukšto terasą. Jokio streso šeimininkams – propeleriai visiškai apsaugoti minkštais gaubtais.',
     stats: [
@@ -97,6 +101,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Kauno marių pakrantė',
     year: '2026',
     image: '/manus-storage/event-livestream-fpv_4273f4e1.jpg',
+    videoUrl: '/images/comparison-fpv.mp4',
     videoPlaceholderText: 'Žiūrėti tiesioginės transliacijos FPV signalą',
     description: 'Realaus laiko HD SDI signalas tiesiai į režisūrinį pultą. Minios energija, scenos šviesos ir skrydis virš 10 000 žiūrovų galvų pagal griežčiausius CAA saugumo reikalavimus.',
     stats: [
@@ -114,6 +119,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Kauno LEZ',
     year: '2025',
     image: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
+    videoUrl: '/images/hero2-1.mp4',
     videoPlaceholderText: 'Žiūrėti gamybos linijos vieno kadro video',
     description: 'Skrydis tarp robotizuotų staklių rankų, aukštų stelažų ir automatinių kroviklių. Sukuria pažangios, futuristinės gamyklos įvaizdį B2B partneriams ir investuotojams.',
     stats: [
