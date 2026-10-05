@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { X } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Pause, Play, X } from 'lucide-react';
 import { PortfolioItem } from '@/data';
 
 interface VideoModalProps {
@@ -8,8 +8,12 @@ interface VideoModalProps {
 }
 
 export function VideoModal({ item, onClose }: VideoModalProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   useEffect(() => {
     if (!item) return;
+    setIsPlaying(false);
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();
@@ -26,6 +30,17 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
   }, [item, onClose]);
 
   if (!item) return null;
+
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused || video.ended) {
+      void video.play();
+    } else {
+      video.pause();
+    }
+  };
 
   return (
     <div
@@ -62,18 +77,30 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
         {/* Functional HTML5 video player */}
         <div className="relative aspect-video bg-black overflow-hidden">
           <video
+            ref={videoRef}
             className="w-full h-full object-contain"
             controls
-            autoPlay
             muted
             playsInline
             preload="metadata"
             poster={item.image}
             aria-label={item.title}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onEnded={() => setIsPlaying(false)}
           >
             <source src={item.videoUrl} type="video/mp4" />
             Jūsų naršyklė nepalaiko HTML5 vaizdo įrašų.
           </video>
+
+          <button
+            type="button"
+            onClick={togglePlayback}
+            aria-label={isPlaying ? 'Pristabdyti vaizdo įrašą' : 'Leisti vaizdo įrašą'}
+            className={`absolute inset-0 m-auto w-20 h-20 rounded-full bg-amber-400 text-black flex items-center justify-center shadow-2xl shadow-amber-400/50 hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200 transition-all ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+          >
+            {isPlaying ? <Pause className="w-8 h-8 fill-black" /> : <Play className="w-8 h-8 fill-black translate-x-0.5" />}
+          </button>
 
           {/* OSD Telemetry overlay (Simulates real FPV goggles view) */}
           <div className="pointer-events-none absolute top-4 left-4 font-mono text-[11px] text-amber-400/90 bg-black/60 px-3 py-1.5 rounded border border-amber-400/20 backdrop-blur-sm">
