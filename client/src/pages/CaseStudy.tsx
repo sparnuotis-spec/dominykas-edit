@@ -129,6 +129,16 @@ export default function CaseStudyPage() {
               <div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] mb-5">{study.eyebrow}</div><h1 className="font-display text-5xl sm:text-7xl font-bold leading-[.96] tracking-tight">{study.title}</h1><p className="mt-7 text-lg text-white/70 leading-relaxed">{study.intro}</p></div>
               <div className="rounded-3xl overflow-hidden border border-white/10"><img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" /></div>
             </div>
+            <div className="mt-12 rounded-2xl border-2 border-[#efc400]/70 bg-black/25 p-5 sm:p-6">
+              <div className="text-xs uppercase tracking-[.16em] font-extrabold text-[#efc400] mb-4">Pasirinkite portfolio tipą</div>
+              <div className="flex flex-wrap gap-3">
+                {PORTFOLIO_CATEGORIES.filter(tab => tab.id !== 'all').map(tab => (
+                  <a key={tab.id} href={`/portfolio/${tab.id}`} className={`rounded-full border-2 px-4 py-2.5 text-sm font-extrabold transition-colors ${tab.id === study.category ? 'border-[#efc400] bg-[#efc400] text-[#27251f] shadow-lg shadow-[#efc400]/20' : 'border-white/70 bg-white text-[#27251f] hover:border-[#efc400] hover:bg-[#efc400]'}`}>
+                    {tab.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
