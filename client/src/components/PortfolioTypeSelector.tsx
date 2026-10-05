@@ -6,13 +6,13 @@ interface PortfolioTypeSelectorProps {
 
 export default function PortfolioTypeSelector({ activeCategory }: PortfolioTypeSelectorProps) {
   return (
-    <div className="rounded-2xl bg-[#efc400] text-[#27251f] p-4 sm:p-5 shadow-xl">
+    <div className="rounded-2xl bg-[#211f1a] text-white p-4 sm:p-5 shadow-xl">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
         {PORTFOLIO_CATEGORIES.map(tab => (
           <a
             key={tab.id}
             href={tab.id === 'all' ? '/portfolio' : `/portfolio/${tab.id}`}
-            className={`rounded-xl border px-4 py-3 text-left font-bold transition-colors ${tab.id === activeCategory ? 'border-[#27251f] bg-[#27251f] text-white' : 'border-[#d9d4c8] bg-[#fcfbf7] hover:border-[#27251f] hover:bg-[#fff8d7]'}`}
+            className={`rounded-xl border px-4 py-3 text-left font-bold transition-colors ${tab.id === activeCategory ? 'border-white bg-[#efc400] text-[#27251f]' : 'border-white bg-white text-[#27251f] hover:border-white hover:bg-[#efc400]'}`}
           >
             {tab.label}
           </a>
