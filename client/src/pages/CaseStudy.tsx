@@ -1,8 +1,10 @@
-import { ArrowLeft, ArrowRight, CheckCircle2, Clock3, MapPin, Play, ShieldCheck } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Clock3, MapPin, Play, ShieldCheck } from 'lucide-react';
 import { useRoute } from 'wouter';
-import { PORTFOLIO_CATEGORIES, PortfolioCategory } from '@/data';
+import { PORTFOLIO_CATEGORIES, PORTFOLIO_ITEMS, PortfolioCategory, PortfolioItem } from '@/data';
 import { Navigation, Footer } from '@/components/Navigation';
 import PortfolioTypeSelector from '@/components/PortfolioTypeSelector';
+import { VideoModal } from '@/components/VideoModal';
 import Seo from '@/components/Seo';
 
 const caseStudies: Record<PortfolioCategory, {
@@ -113,6 +115,7 @@ const caseStudies: Record<PortfolioCategory, {
 
 export default function CaseStudyPage() {
   const [, params] = useRoute('/portfolio/:category');
+  const [selectedVideo, setSelectedVideo] = useState<PortfolioItem | null>(null);
   const study = params?.category ? caseStudies[params.category as keyof typeof caseStudies] : undefined;
   if (!study) return null;
 
@@ -150,11 +153,12 @@ export default function CaseStudyPage() {
             </div>
 
             <div className="mt-14 rounded-3xl bg-[#efc400] p-7 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-7"><div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#27251f]/65">Kas buvo svarbu projekte</div><ul className="mt-4 space-y-2">{study.details.map(detail => <li key={detail} className="flex items-start gap-2 font-bold"><CheckCircle2 className="w-5 h-5 shrink-0" />{detail}</li>)}</ul></div><a href="/kontaktai#poreikiu-vedlys" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#27251f] text-white px-6 py-3.5 font-bold hover:bg-[#3a382f]">Papasakoti apie savo projektą <ArrowRight className="w-4 h-4" /></a></div>
-            {study.category === 'interior' && <section className="mt-16"><div className="mb-7"><div className="text-xs uppercase tracking-[.16em] font-bold text-[#9b7b00]">Daugiau darbų</div><h2 className="font-display text-3xl sm:text-4xl font-bold mt-2">Vidaus skrydžių galerija</h2><p className="text-[#6d6a61] mt-3 max-w-2xl">Kelios skirtingos skrydžio perspektyvos, parodančios, kaip Cinewhoop kamera juda arti erdvės detalių.</p></div><div className="grid md:grid-cols-3 gap-5"><article className="rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]"><video className="w-full aspect-video object-cover bg-[#27251f]" controls preload="metadata" poster={study.image} aria-label="FPV interjero skrydis"><source src="/images/hero2-1.mp4" type="video/mp4" /></video><div className="p-4"><h3 className="font-display font-bold">Interjero turas</h3><p className="text-sm text-[#6d6a61] mt-1">Skrydis per erdves ir natūralius perėjimus.</p></div></article><article className="rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]"><video className="w-full aspect-video object-cover bg-[#27251f]" controls preload="metadata" aria-label="FPV skrydžio kadras"><source src="/images/comparison-fpv.mp4" type="video/mp4" /></video><div className="p-4"><h3 className="font-display font-bold">FPV perspektyva</h3><p className="text-sm text-[#6d6a61] mt-1">Artimas, dinamiškas kameros judėjimas.</p></div></article><article className="rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]"><video className="w-full aspect-video object-cover bg-[#27251f]" controls preload="metadata" aria-label="Stabilus filmavimo kadras"><source src="/images/comparison-dji.mp4" type="video/mp4" /></video><div className="p-4"><h3 className="font-display font-bold">Sklandus pravažiavimas</h3><p className="text-sm text-[#6d6a61] mt-1">Platus kadras, skirtas erdvei ir architektūrai.</p></div></article></div></section>}
+            {study.category === 'interior' && <section className="mt-16"><div className="mb-7"><div className="text-xs uppercase tracking-[.16em] font-bold text-[#9b7b00]">Daugiau darbų</div><h2 className="font-display text-3xl sm:text-4xl font-bold mt-2">Vidaus skrydžių galerija</h2><p className="text-[#6d6a61] mt-3 max-w-2xl">Peržiūrėkite daugiau FPV darbų — pasirinkite kadrą ir paleiskite visą video.</p></div><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">{PORTFOLIO_ITEMS.filter(item => item.id !== 'modern-villa-flythrough').map(item => <article key={item.id} className="group cursor-pointer rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]" onClick={() => setSelectedVideo(item)}><div className="aspect-[4/3] relative overflow-hidden"><img src={item.image} alt={`${item.title} — FPV filmavimo kadras`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /><div className="absolute inset-0 bg-gradient-to-t from-[#27251f]/80 via-transparent to-transparent" /><div className="absolute bottom-4 left-4 right-4 text-white"><div className="text-[10px] uppercase tracking-wider font-bold text-[#efc400]">{item.categoryLabel}</div><h3 className="font-display text-xl font-bold mt-1">{item.title}</h3></div><span className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#efc400] text-[#27251f] grid place-items-center opacity-0 group-hover:opacity-100 transition-opacity"><Play className="w-4 h-4 fill-current" /></span></div><div className="p-5"><div className="text-sm text-[#6d6a61]">{item.location} • {item.year}</div><p className="text-sm text-[#6d6a61] leading-relaxed mt-3 line-clamp-3">{item.description}</p><div className="mt-5 inline-flex items-center gap-1 text-sm font-bold">Peržiūrėti <ArrowUpRight className="w-4 h-4" /></div></div></article>)}</div></section>}
           </div>
         </section>
       </main>
       <Footer />
+      <VideoModal item={selectedVideo} onClose={() => setSelectedVideo(null)} />
     </div>
   );
 }
