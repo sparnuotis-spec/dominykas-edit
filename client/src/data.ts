@@ -1,7 +1,20 @@
+export type PortfolioCategory = 'action' | 'events' | 'real-estate' | 'auto-events' | 'live-streams' | 'interior' | 'commercials';
+
+export const PORTFOLIO_CATEGORIES: { id: 'all' | PortfolioCategory; label: string }[] = [
+  { id: 'all', label: 'Visi darbai' },
+  { id: 'action', label: 'Veiksmas' },
+  { id: 'events', label: 'Renginiai' },
+  { id: 'real-estate', label: 'Nekilnojamasis turtas' },
+  { id: 'auto-events', label: 'AutoRenginiai' },
+  { id: 'live-streams', label: 'Tiesioginės transliacijos' },
+  { id: 'interior', label: 'Vidaus filmavimas' },
+  { id: 'commercials', label: 'Reklaminiai klipai' },
+];
+
 export interface PortfolioItem {
   id: string;
   title: string;
-  category: 'real-estate' | 'sports' | 'events' | 'commercials';
+  categories: PortfolioCategory[];
   categoryLabel: string;
   location: string;
   year: string;
@@ -42,8 +55,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'autotoja',
     title: 'Autotoja Toyota auto salonas',
-    category: 'commercials',
-    categoryLabel: 'Reklama',
+    categories: ['auto-events'],
+    categoryLabel: 'AutoRenginiai',
     location: 'Kaunas, Lietuva',
     year: '2025',
     image: '/images/autotoja.webp',
@@ -60,8 +73,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'drift-action-kachergine',
     title: 'Nemuno žiedo šoninio slydimo (Drift) persekiojimas',
-    category: 'sports',
-    categoryLabel: 'Motorsportas ir veiksmas',
+    categories: ['action'],
+    categoryLabel: 'Veiksmas',
     location: 'Nemuno žiedas, Kačerginė',
     year: '2026',
     image: '/manus-storage/sports-action-fpv_6397dda8.jpg',
@@ -78,7 +91,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'modern-villa-flythrough',
     title: 'Modernios pušyno vilos praskridimas Kauno rajone',
-    category: 'real-estate',
+    categories: ['real-estate', 'interior'],
     categoryLabel: 'Nekilnojamasis turtas',
     location: 'Kauno r. (Kulautuva)',
     year: '2026',
@@ -96,8 +109,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'music-festival-livestream',
     title: 'Gyvos muzikos festivalio tiesioginė transliacija',
-    category: 'events',
-    categoryLabel: 'Renginiai ir tiesioginis eteris',
+    categories: ['events', 'live-streams'],
+    categoryLabel: 'Renginiai • Tiesioginės transliacijos',
     location: 'Kauno marių pakrantė',
     year: '2026',
     image: '/manus-storage/event-livestream-fpv_4273f4e1.jpg',
@@ -114,8 +127,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'industrial-robotics-reel',
     title: 'Išmanios gamyklos ir logistikos centro pristatymas',
-    category: 'commercials',
-    categoryLabel: 'Industrinė reklama',
+    categories: ['commercials'],
+    categoryLabel: 'Reklaminiai klipai',
     location: 'Kauno LEZ',
     year: '2025',
     image: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
