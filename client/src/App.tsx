@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { useEffect } from "react";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -24,6 +25,31 @@ function Router() {
   </Switch>;
 }
 
+function HashScroll() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(decodeURIComponent(hash));
+        if (!target) return;
+
+        const top = target.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      });
+    };
+
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, [location]);
+
+  return null;
+}
+
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Router /></TooltipProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><HashScroll /><Router /></TooltipProvider></ThemeProvider></ErrorBoundary>;
 }
