@@ -4,7 +4,7 @@ import { PORTFOLIO_CATEGORIES, PortfolioCategory } from '@/data';
 import { Navigation, Footer } from '@/components/Navigation';
 import Seo from '@/components/Seo';
 
-const caseStudies: Record<'real-estate' | 'live-streams', {
+const caseStudies: Record<PortfolioCategory, {
   category: PortfolioCategory;
   eyebrow: string;
   title: string;
@@ -42,6 +42,71 @@ const caseStudies: Record<'real-estate' | 'live-streams', {
     challenge: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Organizatoriams reikėjo dinamiško vaizdo iš renginio erdvės, kuris galėtų būti naudojamas tiesioginėje programoje be trikdančios delsos.',
     approach: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suderinome skrydžio zonas, ryšio kanalus ir atsarginius scenarijus su režisieriumi. Prieš renginį atlikome techninį testą ir repetavome svarbiausius momentus.',
     result: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. FPV kadrai tapo gyva renginio pasakojimo dalimi: auditorija matė sceną, minią ir atmosferą iš kampų, kurių įprasta kamera nepasiektų.',
+  },
+  action: {
+    category: 'action',
+    eyebrow: 'Atvejo analizė · Veiksmas',
+    title: 'Kaip sekame greitį iš arčiausiai įmanomo kampo',
+    intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Šis pavyzdys parodo, kaip planuojame dinamišką FPV skrydį šalia greitai judančio objekto.',
+    image: '/manus-storage/sports-action-fpv_6397dda8.jpg',
+    location: 'Nemuno žiedas · Kačerginė',
+    duration: '1 filmavimo diena',
+    details: ['Greitas 5 colių FPV dronas', 'Trajektorijos repeticija su komanda', 'Dinamiški kadrai reklamai ir socialiniams tinklams'],
+    challenge: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reikėjo išlaikyti automobilį kadre dideliu greičiu ir saugiai kartoti trajektoriją skirtinguose trasos posūkiuose.',
+    approach: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suderinome piloto ir vairuotojo signalus, susiplanavome atsitraukimo zonas ir nufilmavome kelias skirtingo tempo versijas.',
+    result: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gavome energingą medžiagą, kuri perteikia greitį, artumą ir vairuotojo trajektoriją.',
+  },
+  events: {
+    category: 'events',
+    eyebrow: 'Atvejo analizė · Renginiai',
+    title: 'Kaip renginio atmosferą perkeliame į vieną skrydį',
+    intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Šis pavyzdys parodo, kaip ruošiame FPV filmavimą renginyje, kuriame svarbūs žmonės, energija ir momentas.',
+    image: '/manus-storage/event-livestream-fpv_4273f4e1.jpg',
+    location: 'Kaunas · renginio erdvė',
+    duration: 'Renginio diena',
+    details: ['Skrydžio zonų ir žmonių srautų planas', 'Keli saugūs pakilimo taškai', 'Kinematografiniai renginio kadrai'],
+    challenge: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Renginyje viskas vyksta vienu metu, todėl reikėjo suderinti skrydžius su programa, publika ir technine komanda.',
+    approach: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Prieš renginį apžiūrėjome vietą, pažymėjome saugias zonas ir susitarėme dėl aiškių signalų su organizatoriais.',
+    result: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sukūrėme gyvą renginio pasakojimą, kuris veikia tiek kaip ilgesnis filmas, tiek kaip trumpi socialinių tinklų klipai.',
+  },
+  'auto-events': {
+    category: 'auto-events',
+    eyebrow: 'Atvejo analizė · AutoRenginiai',
+    title: 'Kaip automobilį paverčiame pagrindiniu istorijos veikėju',
+    intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Šis pavyzdys parodo, kaip planuojame automobilių renginio kadrus, kad technika ir emocija veiktų kartu.',
+    image: '/images/autotoja.webp',
+    location: 'Kaunas · auto renginys',
+    duration: '1 filmavimo diena',
+    details: ['Dinamiškos pravažiavimo trajektorijos', 'Automobilio ir aplinkos koordinavimas', '4K medžiaga reklamai ir renginio komunikacijai'],
+    challenge: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Klientui reikėjo parodyti automobilį ne statiškai, o per judesį, mastelį ir tikrą renginio atmosferą.',
+    approach: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sudėliojome pravažiavimų seką, kameros aukščius ir saugius atstumus, kad kiekvienas kadras turėtų aiškią funkciją.',
+    result: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Galutinis filmas sujungė automobilio charakterį, renginio energiją ir sklandų FPV judėjimą.',
+  },
+  interior: {
+    category: 'interior',
+    eyebrow: 'Atvejo analizė · Vidaus filmavimas',
+    title: 'Kaip saugiai skraidome ten, kur kamera turi būti arti',
+    intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Šis pavyzdys parodo, kaip filmuojame interjerą su mažu, apsaugotu Cinewhoop dronu.',
+    image: '/manus-storage/real-estate-fpv_775b2002.jpg',
+    location: 'Kaunas · vidinė erdvė',
+    duration: 'Kelios filmavimo valandos',
+    details: ['Apsaugoti propeleriai', 'Skrydis per duris ir koridorius', 'Sklandus Gyroflow stabilizavimas'],
+    challenge: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reikėjo parodyti interjero ryšį su aplinka, išlaikant saugų atstumą nuo baldų, sienų ir žmonių.',
+    approach: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pradėjome nuo lėto bandymo, susiplanavome įėjimo ir išėjimo taškus bei suderinome erdvę su klientu.',
+    result: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gavome vientisą, ramų ir erdvę pajusti leidžiantį video be statinių kameros pozicijų.',
+  },
+  commercials: {
+    category: 'commercials',
+    eyebrow: 'Atvejo analizė · Reklaminiai klipai',
+    title: 'Kaip verslo erdvę paverčiame įsimintinu reklaminiu klipu',
+    intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Šis pavyzdys parodo, kaip FPV skrydis padeda verslui aiškiai parodyti vietą, procesą ir mastą.',
+    image: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
+    location: 'Kauno LEZ',
+    duration: '1 filmavimo diena',
+    details: ['Vieno kadro skrydžio planas', 'Filmavimas veikiančioje erdvėje', 'Medžiaga reklamai ir B2B komunikacijai'],
+    challenge: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reikėjo sudėtingą gamybos procesą parodyti aiškiai, dinamiškai ir taip, kad žiūrovas suprastų erdvės mastą.',
+    approach: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iš anksto susidėliojome trajektoriją, suderinome darbą su objekto komanda ir numatėme saugų vieno kadro ritmą.',
+    result: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sukūrėme vientisą reklaminį klipą, kuris parodo procesą, technologiją ir žmones vienu įsimenančiu judesiu.',
   },
 };
 

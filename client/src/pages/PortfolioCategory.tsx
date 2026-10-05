@@ -26,7 +26,7 @@ export default function PortfolioCategoryPage() {
               <a href="/portfolio" className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] hover:text-[#ffd72f]">← Visas portfolio</a>
               <h1 className="font-display text-5xl sm:text-7xl font-bold tracking-tight leading-[.95] mt-5">{categoryDetails.label}</h1>
               <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">Peržiūrėkite mūsų {categoryDetails.label.toLowerCase()} FPV filmavimo darbus.</p>
-              {(category === 'real-estate' || category === 'live-streams') && <a href={`/portfolio/${category}/case-study`} className="mt-7 inline-flex items-center rounded-full bg-[#efc400] px-5 py-3 font-bold text-[#27251f] hover:bg-[#ffd72f]">Skaityti atvejo analizę <ArrowUpRight className="w-4 h-4 ml-2" /></a>}
+              <a href={`/portfolio/${category}/case-study`} className="mt-7 inline-flex items-center rounded-full bg-[#efc400] px-5 py-3 font-bold text-[#27251f] hover:bg-[#ffd72f]">Skaityti atvejo analizę <ArrowUpRight className="w-4 h-4 ml-2" /></a>
             </div>
             <div className="flex flex-wrap gap-3 mt-10">
               {PORTFOLIO_CATEGORIES.map(tab => (
