@@ -137,7 +137,7 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
             </div>
 
             <a
-              href="#poreikiu-vedlys"
+              href="/#poreikiu-vedlys"
               onClick={onClose}
               className="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-black shadow transition-all"
             >
