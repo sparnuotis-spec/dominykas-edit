@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
+import Contacts from "./pages/Contacts";
 import Dashboard from "./pages/Dashboard";
 import ServicePage, { SERVICES } from "./pages/ServicePage";
 
@@ -13,6 +14,7 @@ function Router() {
   return <Switch>
     <Route path="/" component={Home} />
     <Route path="/portfolio" component={Portfolio} />
+    <Route path="/kontaktai" component={Contacts} />
     <Route path="/dashboard" component={Dashboard} />
     {Object.values(SERVICES).map(service => <Route key={service.slug} path={`/paslaugos/${service.slug}`} component={() => <ServicePage service={service} />} />)}
     <Route path="/404" component={NotFound} />
