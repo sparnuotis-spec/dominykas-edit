@@ -125,19 +125,20 @@ export default function CaseStudyPage() {
         <section className="bg-[#27251f] text-white pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <a href="/portfolio" className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />Visas portfolio</a>
-            <div className="grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-end mt-10">
-              <div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] mb-5">{study.eyebrow}</div><h1 className="font-display text-5xl sm:text-7xl font-bold leading-[.96] tracking-tight">{study.title}</h1><p className="mt-7 text-lg text-white/70 leading-relaxed">{study.intro}</p></div>
-              <div className="rounded-3xl overflow-hidden border border-white/10"><img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" /></div>
-            </div>
-            <div className="mt-12 rounded-2xl border-2 border-[#efc400]/70 bg-black/25 p-5 sm:p-6">
-              <div className="text-xs uppercase tracking-[.16em] font-extrabold text-[#efc400] mb-4">Pasirinkite portfolio tipą</div>
-              <div className="flex flex-wrap gap-3">
+            <div className="mt-8 rounded-2xl bg-[#fcfbf7] text-[#27251f] p-6 sm:p-8 shadow-2xl">
+              <div className="text-[10px] uppercase tracking-[.16em] font-bold text-[#9b7b00] mb-2">Portfolio pasirinkimas</div>
+              <div className="font-display text-2xl font-bold mb-5">Pasirinkite portfolio tipą</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {PORTFOLIO_CATEGORIES.filter(tab => tab.id !== 'all').map(tab => (
-                  <a key={tab.id} href={`/portfolio/${tab.id}`} className={`rounded-full border-2 px-4 py-2.5 text-sm font-extrabold transition-colors ${tab.id === study.category ? 'border-[#efc400] bg-[#efc400] text-[#27251f] shadow-lg shadow-[#efc400]/20' : 'border-white/70 bg-white text-[#27251f] hover:border-[#efc400] hover:bg-[#efc400]'}`}>
+                  <a key={tab.id} href={`/portfolio/${tab.id}`} className={`rounded-xl border px-4 py-4 text-left font-bold transition-colors ${tab.id === study.category ? 'border-[#efc400] bg-[#efc400] text-[#27251f]' : 'border-[#d9d4c8] hover:border-[#9b7b00] hover:bg-[#fff8d7]'}`}>
                     {tab.label}
                   </a>
                 ))}
               </div>
+            </div>
+            <div className="grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-end mt-10">
+              <div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] mb-5">{study.eyebrow}</div><h1 className="font-display text-5xl sm:text-7xl font-bold leading-[.96] tracking-tight">{study.title}</h1><p className="mt-7 text-lg text-white/70 leading-relaxed">{study.intro}</p></div>
+              <div className="rounded-3xl overflow-hidden border border-white/10"><img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" /></div>
             </div>
           </div>
         </section>
