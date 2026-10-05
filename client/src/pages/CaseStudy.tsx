@@ -122,14 +122,14 @@ export default function CaseStudyPage() {
     <div className="min-h-screen bg-[#f4f1e9] text-[#27251f]">
       <Seo title={`${study.title} | Sparnuotis`} description={study.intro} path={`/portfolio/${study.category}`} />
       <Navigation dark />
-      <main className="pt-36 pb-20 bg-[#27251f]">
-        <section className="bg-[#27251f] text-white pt-10 pb-16 md:pt-16 md:pb-24">
+      <main className="pt-0 pb-20 bg-[#27251f]">
+        <section className="bg-[#27251f] text-white pt-20 pb-16 md:pt-20 md:pb-24">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <a href="/portfolio" className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />Visas portfolio</a>
             <div className="mt-10"><PortfolioTypeSelector activeCategory={study.category} /></div>
             <div className="grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-end mt-10">
               <div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] mb-5">{study.eyebrow}</div><h1 className="font-display text-5xl sm:text-7xl font-bold leading-[.96] tracking-tight">{study.title}</h1><p className="mt-7 text-lg text-white/70 leading-relaxed">{study.intro}</p></div>
-              <div className="rounded-3xl overflow-hidden border border-white/10"><img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" /></div>
+              <div className="rounded-3xl overflow-hidden border border-white/10">{study.category === 'interior' ? <video className="w-full aspect-[16/10] object-cover" autoPlay muted loop playsInline preload="metadata" poster={study.image} aria-label={`${study.title} — FPV filmavimo video`}><source src="/images/hero2-1.mp4" type="video/mp4" /></video> : <img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" />}</div>
             </div>
           </div>
         </section>
@@ -150,6 +150,7 @@ export default function CaseStudyPage() {
             </div>
 
             <div className="mt-14 rounded-3xl bg-[#efc400] p-7 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-7"><div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#27251f]/65">Kas buvo svarbu projekte</div><ul className="mt-4 space-y-2">{study.details.map(detail => <li key={detail} className="flex items-start gap-2 font-bold"><CheckCircle2 className="w-5 h-5 shrink-0" />{detail}</li>)}</ul></div><a href="/kontaktai#poreikiu-vedlys" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#27251f] text-white px-6 py-3.5 font-bold hover:bg-[#3a382f]">Papasakoti apie savo projektą <ArrowRight className="w-4 h-4" /></a></div>
+            {study.category === 'interior' && <section className="mt-16"><div className="mb-7"><div className="text-xs uppercase tracking-[.16em] font-bold text-[#9b7b00]">Daugiau darbų</div><h2 className="font-display text-3xl sm:text-4xl font-bold mt-2">Vidaus skrydžių galerija</h2><p className="text-[#6d6a61] mt-3 max-w-2xl">Kelios skirtingos skrydžio perspektyvos, parodančios, kaip Cinewhoop kamera juda arti erdvės detalių.</p></div><div className="grid md:grid-cols-3 gap-5"><article className="rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]"><video className="w-full aspect-video object-cover bg-[#27251f]" controls preload="metadata" poster={study.image} aria-label="FPV interjero skrydis"><source src="/images/hero2-1.mp4" type="video/mp4" /></video><div className="p-4"><h3 className="font-display font-bold">Interjero turas</h3><p className="text-sm text-[#6d6a61] mt-1">Skrydis per erdves ir natūralius perėjimus.</p></div></article><article className="rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]"><video className="w-full aspect-video object-cover bg-[#27251f]" controls preload="metadata" aria-label="FPV skrydžio kadras"><source src="/images/comparison-fpv.mp4" type="video/mp4" /></video><div className="p-4"><h3 className="font-display font-bold">FPV perspektyva</h3><p className="text-sm text-[#6d6a61] mt-1">Artimas, dinamiškas kameros judėjimas.</p></div></article><article className="rounded-2xl overflow-hidden bg-[#fcfbf7] border border-[#d9d4c8]"><video className="w-full aspect-video object-cover bg-[#27251f]" controls preload="metadata" aria-label="Stabilus filmavimo kadras"><source src="/images/comparison-dji.mp4" type="video/mp4" /></video><div className="p-4"><h3 className="font-display font-bold">Sklandus pravažiavimas</h3><p className="text-sm text-[#6d6a61] mt-1">Platus kadras, skirtas erdvei ir architektūrai.</p></div></article></div></section>}
           </div>
         </section>
       </main>
