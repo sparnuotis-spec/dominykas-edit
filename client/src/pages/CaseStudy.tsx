@@ -129,10 +129,10 @@ export default function CaseStudyPage() {
         <section className="bg-[#27251f] text-white pt-20 pb-8 md:pt-20 md:pb-8">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <a href="/portfolio" className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />Visas portfolio</a>
-            <div className="mt-10"><PortfolioTypeSelector activeCategory={study.category} /></div>
-            <div className="grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-end mt-10">
+            <div className="grid lg:grid-cols-[.75fr_1fr_220px] gap-8 items-end mt-10">
               <div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] mb-5">{study.eyebrow}</div><h1 className="font-display text-5xl sm:text-7xl font-bold leading-[.96] tracking-tight">{study.title}</h1><p className="mt-7 text-lg text-white/70 leading-relaxed">{study.intro}</p></div>
               <div className="rounded-3xl overflow-hidden border border-white/10">{study.category === 'interior' ? <video className="w-full aspect-[16/10] object-cover" autoPlay muted loop playsInline preload="metadata" poster={study.image} aria-label={`${study.title} — FPV filmavimo video`}><source src="/images/hero2-1.mp4" type="video/mp4" /></video> : <img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" />}</div>
+              <PortfolioTypeSelector activeCategory={study.category} vertical />
             </div>
           </div>
         </section>
