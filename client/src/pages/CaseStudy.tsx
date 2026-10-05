@@ -111,7 +111,7 @@ const caseStudies: Record<PortfolioCategory, {
 };
 
 export default function CaseStudyPage() {
-  const [, params] = useRoute('/portfolio/:category/case-study');
+  const [, params] = useRoute('/portfolio/:category');
   const study = params?.category ? caseStudies[params.category as keyof typeof caseStudies] : undefined;
   if (!study) return null;
 
@@ -119,12 +119,12 @@ export default function CaseStudyPage() {
 
   return (
     <div className="min-h-screen bg-[#f4f1e9] text-[#27251f]">
-      <Seo title={`${study.title} | Sparnuotis`} description={study.intro} path={`/portfolio/${study.category}/case-study`} />
+      <Seo title={`${study.title} | Sparnuotis`} description={study.intro} path={`/portfolio/${study.category}`} />
       <Navigation />
       <main className="pt-36 pb-20">
         <section className="bg-[#27251f] text-white pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
-            <a href={`/portfolio/${study.category}`} className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />{categoryLabel}</a>
+            <a href="/portfolio" className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />Visas portfolio</a>
             <div className="grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-end mt-10">
               <div><div className="text-xs uppercase tracking-[.16em] font-bold text-[#efc400] mb-5">{study.eyebrow}</div><h1 className="font-display text-5xl sm:text-7xl font-bold leading-[.96] tracking-tight">{study.title}</h1><p className="mt-7 text-lg text-white/70 leading-relaxed">{study.intro}</p></div>
               <div className="rounded-3xl overflow-hidden border border-white/10"><img src={study.image} alt={`${study.title} — FPV filmavimo kadras`} className="w-full aspect-[16/10] object-cover" /></div>
