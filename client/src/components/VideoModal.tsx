@@ -80,11 +80,14 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
             ref={videoRef}
             className="w-full h-full object-contain"
             controls
+            controlsList="nodownload noplaybackrate"
+            disablePictureInPicture
             muted
             playsInline
             preload="metadata"
             poster={item.image}
             aria-label={item.title}
+            onContextMenu={(event) => event.preventDefault()}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onEnded={() => setIsPlaying(false)}
