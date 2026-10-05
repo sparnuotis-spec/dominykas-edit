@@ -123,7 +123,7 @@ export default function CaseStudyPage() {
       <Seo title={`${study.title} | Sparnuotis`} description={study.intro} path={`/portfolio/${study.category}`} />
       <Navigation dark />
       <main className="pt-0 pb-20 bg-[#27251f]">
-        <section className="bg-[#27251f] text-white pt-20 pb-16 md:pt-20 md:pb-24">
+        <section className="bg-[#27251f] text-white pt-20 pb-8 md:pt-20 md:pb-8">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <a href="/portfolio" className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />Visas portfolio</a>
             <div className="mt-10"><PortfolioTypeSelector activeCategory={study.category} /></div>
@@ -134,7 +134,7 @@ export default function CaseStudyPage() {
           </div>
         </section>
 
-        <section className="py-14 md:py-20 paper-grid">
+        <section className="py-8 md:py-8 paper-grid">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="rounded-2xl bg-[#fcfbf7] border border-[#d9d4c8] p-5"><MapPin className="w-5 h-5 text-[#9b7b00] mb-5" /><div className="text-[10px] uppercase tracking-wider font-bold text-[#9b7b00]">Lokacija</div><div className="font-bold mt-2">{study.location}</div></div>
