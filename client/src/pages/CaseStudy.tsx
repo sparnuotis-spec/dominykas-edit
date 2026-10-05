@@ -121,8 +121,8 @@ export default function CaseStudyPage() {
   return (
     <div className="min-h-screen bg-[#f4f1e9] text-[#27251f]">
       <Seo title={`${study.title} | Sparnuotis`} description={study.intro} path={`/portfolio/${study.category}`} />
-      <Navigation />
-      <main className="pt-36 pb-20">
+      <Navigation dark />
+      <main className="pt-36 pb-20 bg-[#27251f]">
         <section className="bg-[#27251f] text-white pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <a href="/portfolio" className="inline-flex items-center gap-2 text-sm font-bold text-[#efc400] hover:text-[#ffd72f]"><ArrowLeft className="w-4 h-4" />Visas portfolio</a>
