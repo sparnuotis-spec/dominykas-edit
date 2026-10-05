@@ -8,7 +8,7 @@ export default function PortfolioTypeSelector({ activeCategory }: PortfolioTypeS
   return (
     <div className="rounded-2xl bg-[#fcfbf7] text-[#27251f] p-6 sm:p-8 shadow-2xl">
       <div className="text-[10px] uppercase tracking-[.16em] font-bold text-[#9b7b00] mb-2">Portfolio pasirinkimas</div>
-      <div className="font-display text-2xl font-bold mb-5">Pasirinkite portfolio tipą</div>
+      <div className="font-display text-2xl font-bold text-[#efc400] mb-5">Pasirinkite portfolio tipą</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {PORTFOLIO_CATEGORIES.map(tab => (
           <a
