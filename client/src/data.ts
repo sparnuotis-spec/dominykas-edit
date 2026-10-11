@@ -76,55 +76,55 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     tags: ['Vieno kadro skrydis', 'Kaunas', '4K', 'Toyota', 'Autotoja']
   },
   {
-    id: 'drift-action-kachergine',
-    title: 'Nemuno žiedo šoninio slydimo (Drift) persekiojimas',
-    categories: ['action'],
-    location: 'Nemuno žiedas, Kačerginė',
+    id: 'Kaunas-hanza-ugnis',
+    title: 'Kaunas HANZA 2026 Ugnies šou',
+    categories: ['events'],
+    location: 'Kauno pilis',
     year: '2026',
     image: '/manus-storage/sports-action-fpv_6397dda8.jpg',
     videoUrl: '/images/comparison-fpv.mp4',
     videoPlaceholderText: 'Žiūrėti dinamišką lenktynių klipą',
-    description: 'Agresyvus sekimas 10–20 cm atstumu nuo dūmų kamuolyje slystančio automobilio. Dinaminis pagreitis, atkartojantis vairuotojo trajektoriją be jokių kompromisų.',
+    description: 'Skrydis tarp atlikėjų, atliekančių ugnies šou. Itin sudėtinga. Tamsa, ugnis, virš virš 5000 žiūrovų - tokiam filmavimui reikia stipriai pasiruošti ir tik patyręs pilotas gali filmuoti.',
     stats: [
-      { label: 'Maks. greitis', value: '158 km/h' },
-      { label: 'Kamera', value: 'GoPro Bones Cinema' },
-      { label: 'Dronas', value: '5" Custom Apex Quad' }
+      { label: 'Kamera', value: 'DJI o4 pro' },
+      { label: 'Užsakovas', value: 'Viduramziai.lt' },
+      { label: 'Dronas', value: 'Bee25' }
     ],
-    tags: ['Nemuno žiedas', 'Driftas', 'Ekstremalus artumas', 'Greitis']
+    tags: ['Ugnies šou', 'Viduramziai.lt', 'Renginiai', 'FPV']
   },
   {
-    id: 'modern-villa-flythrough',
-    title: 'Modernios pušyno vilos praskridimas Kauno rajone',
-    categories: ['real-estate', 'interior'],
-    location: 'Kauno r. (Kulautuva)',
+    id: 'VGC-2026',
+    title: 'Vilnius Gravity Cup 2026',
+    categories: ['events', 'commercials', 'action'],
+    location: 'Vilnius',
     year: '2026',
     image: '/manus-storage/real-estate-fpv_775b2002.jpg',
     videoUrl: '/images/hero2-1.mp4',
     videoPlaceholderText: 'Žiūrėti interjero ir eksterjero turą',
-    description: 'Apsaugoto Cinewhoop drono lėtas, plastiškas skrydis iš pušyno terasos tiesiai pro atvirą vitriną į virtuvę, svetainę ir antro aukšto terasą. Jokio streso šeimininkams – propeleriai visiškai apsaugoti minkštais gaubtais.',
+    description: 'MTB dviratininkų sekimas miške varžybų metu. Jokio pavojaus lenktyninkams - propeleriai apsaugoti minkštais gaubtais. Viskas realu, jokio DI.',
     stats: [
-      { label: 'Drono tipas', value: 'Cinewhoop 3.5"' },
+      { label: 'Drono tipas', value: 'Bee25' },
       { label: 'Saugumo lygis', value: '100% apsaugoti propeleriai' },
-      { label: 'Stabilizavimas', value: 'Gyroflow Cinema Smooth' }
+      { label: 'Užsakovas', value: 'HypeSix' }
     ],
-    tags: ['Interjeras', 'NT pristatymas', 'Cinewhoop', 'Saugu viduje']
+    tags: ['Dviračiai', 'Vilnius Gravity Cup', 'MTB', 'HypeSix', 'FPV']
   },
   {
-    id: 'music-festival-livestream',
-    title: 'Gyvos muzikos festivalio tiesioginė transliacija',
-    categories: ['events', 'live-streams'],
-    location: 'Kauno marių pakrantė',
+    id: 'tautvydo-dvaras',
+    title: 'Tautvydo Dvaras',
+    categories: ['real-estate', 'commercials'],
+    location: 'Tautvydo Dvaras',
     year: '2026',
     image: '/manus-storage/event-livestream-fpv_4273f4e1.jpg',
     videoUrl: '/images/comparison-fpv.mp4',
     videoPlaceholderText: 'Žiūrėti tiesioginės transliacijos FPV signalą',
-    description: 'Realaus laiko HD SDI signalas tiesiai į režisūrinį pultą. Minios energija, scenos šviesos ir skrydis virš 10 000 žiūrovų galvų pagal griežčiausius CAA saugumo reikalavimus.',
+    description: 'Sklandus įskridimas į Dvarą-sodybą, praskridimas per koridorius ir išskridimas į lauką.',
     stats: [
-      { label: 'Vėlavimas (Latency)', value: '< 28 ms' },
-      { label: 'Signalo išvestis', value: '1080p 60fps HDMI/SDI' },
-      { label: 'Transliacija', value: 'Tiesiogiai į LED ekranus' }
+      { label: 'Pasiruošimo laikas', value: '2 val' },
+      { label: 'Video kokybė', value: '4k 60fps aukščiaucia kokybė' },
+      { label: 'Dronas', value: 'Bee25' }
     ],
-    tags: ['Tiesioginis eteris', 'Festivalis', 'Režisūrinis pultas', 'Masinis renginys']
+    tags: ['Tautvydo dvaras', 'Zarembų dvaras', 'Sodyba', 'Dvaras', 'FPV']
   },
   {
     id: 'industrial-robotics-reel',
