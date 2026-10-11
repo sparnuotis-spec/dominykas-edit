@@ -105,11 +105,6 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
             {isPlaying ? <Pause className="w-8 h-8 fill-black" /> : <Play className="w-8 h-8 fill-black translate-x-0.5" />}
           </button>
 
-          {/* OSD Telemetry overlay (Simulates real FPV goggles view) */}
-          <div className="pointer-events-none absolute top-4 left-4 font-mono text-[11px] text-amber-400/90 bg-black/60 px-3 py-1.5 rounded border border-amber-400/20 backdrop-blur-sm">
-            <div>FPV-OSD // 4K 60FPS // 10-BIT</div>
-            <div>BATT: 24.8V (6S) | GYRO: LOCKED</div>
-          </div>
         </div>
 
         {/* Details & Specs */}
