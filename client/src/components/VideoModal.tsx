@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Pause, Play, X } from 'lucide-react';
-import { PortfolioItem } from '@/data';
+import { PORTFOLIO_CATEGORY_LABELS, PortfolioItem } from '@/data';
 
 interface VideoModalProps {
   item: PortfolioItem | null;
@@ -58,7 +58,7 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
         <div className="p-4 sm:p-6 border-b border-zinc-800 flex items-center justify-between">
           <div>
             <span className="text-xs font-semibold px-2.5 py-1 rounded bg-amber-400 text-black uppercase tracking-wider">
-              {item.categoryLabel}
+              {item.categories.map(category => PORTFOLIO_CATEGORY_LABELS[category]).join(' • ')}
             </span>
             <h3 id="portfolio-video-title" className="text-xl sm:text-2xl font-bold text-white mt-2 font-display">
               {item.title}
