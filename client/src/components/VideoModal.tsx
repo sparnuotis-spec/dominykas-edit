@@ -15,6 +15,33 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
     if (!item) return;
     setIsPlaying(false);
 
+    const video = videoRef.current as (HTMLVideoElement & { webkitDisplayingFullscreen?: boolean }) | null;
+    const onFullscreenChange = () => {
+      if (!video) return;
+
+      const fullscreenElement = document.fullscreenElement;
+      const isFullscreen =
+        fullscreenElement === video ||
+        Boolean(fullscreenElement?.contains(video)) ||
+        video.webkitDisplayingFullscreen === true;
+      const nextSource = isFullscreen ? item.highVideoUrl : item.lowVideoUrl;
+
+      if (video.getAttribute('src') === nextSource) return;
+
+      const playbackPosition = video.currentTime;
+      const wasPlaying = !video.paused && !video.ended;
+      const restorePlayback = () => {
+        if (Number.isFinite(playbackPosition) && Number.isFinite(video.duration)) {
+          video.currentTime = Math.min(playbackPosition, video.duration);
+        }
+        if (wasPlaying) void video.play().catch(() => undefined);
+      };
+
+      video.addEventListener('loadedmetadata', restorePlayback, { once: true });
+      video.src = nextSource;
+      video.load();
+    };
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();
     };
@@ -22,10 +49,16 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onKeyDown);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    video?.addEventListener('webkitbeginfullscreen', onFullscreenChange);
+    video?.addEventListener('webkitendfullscreen', onFullscreenChange);
 
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
+      video?.removeEventListener('webkitbeginfullscreen', onFullscreenChange);
+      video?.removeEventListener('webkitendfullscreen', onFullscreenChange);
     };
   }, [item, onClose]);
 
@@ -50,11 +83,10 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
       aria-labelledby="portfolio-video-title"
       onClick={onClose}
     >
-      <div 
+      <div
         className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden max-w-4xl w-full shadow-2xl relative"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top Header */}
         <div className="p-4 sm:p-6 border-b border-zinc-800 flex items-center justify-between">
           <div>
             <span className="text-xs font-semibold px-2.5 py-1 rounded bg-amber-400 text-black uppercase tracking-wider">
@@ -74,25 +106,24 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
           </button>
         </div>
 
-        {/* Functional HTML5 video player */}
         <div className="relative aspect-video bg-black overflow-hidden">
           <video
             ref={videoRef}
+            src={item.lowVideoUrl}
             className="w-full h-full object-contain"
             controls
             controlsList="nodownload noplaybackrate"
             disablePictureInPicture
             muted
             playsInline
-            preload="metadata"
-            poster={item.image}
+            preload="none"
+            poster={item.thumbnail}
             aria-label={item.title}
             onContextMenu={(event) => event.preventDefault()}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onEnded={() => setIsPlaying(false)}
           >
-            <source src={item.videoUrl} type="video/mp4" />
             Jūsų naršyklė nepalaiko HTML5 vaizdo įrašų.
           </video>
 
@@ -104,10 +135,8 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
           >
             {isPlaying ? <Pause className="w-8 h-8 fill-black" /> : <Play className="w-8 h-8 fill-black translate-x-0.5" />}
           </button>
-
         </div>
 
-        {/* Details & Specs */}
         <div className="p-6 bg-zinc-900/60 border-t border-zinc-800">
           <p className="text-zinc-300 text-sm leading-relaxed mb-6">
             {item.description}
@@ -140,7 +169,6 @@ export function VideoModal({ item, onClose }: VideoModalProps) {
             </a>
           </div>
         </div>
-
       </div>
     </div>
   );

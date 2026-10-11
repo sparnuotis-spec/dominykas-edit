@@ -24,8 +24,9 @@ export interface PortfolioItem {
   categories: PortfolioCategory[];
   location: string;
   year: string;
-  image: string;
-  videoUrl: string;
+  thumbnail: string;
+  lowVideoUrl: string;
+  highVideoUrl: string;
   description: string;
   stats: { label: string; value: string }[];
   tags: string[];
@@ -63,8 +64,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     categories: ['auto-events'],
     location: 'Kaunas, Lietuva',
     year: '2025',
-    image: '/images/autotoja.webp',
-    videoUrl: '/images/hero2-1.mp4',
+    thumbnail: '/images/autotoja.webp',
+    lowVideoUrl: '/videos/portfolio/autotoja-720p50.mp4',
+    highVideoUrl: '/videos/portfolio/autotoja-1080p60.mp4',
     description: 'Vienu nepertraukiamu FPV skrydžiu praskrieta pro visą auto saloną.',
     stats: [
       { label: 'Maks. greitis', value: '10 km/h' },
@@ -79,8 +81,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     categories: ['events'],
     location: 'Kauno pilis',
     year: '2026',
-    image: '/manus-storage/sports-action-fpv_6397dda8.jpg',
-    videoUrl: '/images/comparison-fpv.mp4',
+    thumbnail: '/manus-storage/sports-action-fpv_6397dda8.jpg',
+    lowVideoUrl: '/videos/portfolio/kaunas-hanza-ugnis-720p50.mp4',
+    highVideoUrl: '/videos/portfolio/kaunas-hanza-ugnis-1080p60.mp4',
     description: 'Skrydis tarp atlikėjų, atliekančių ugnies šou. Itin sudėtinga. Tamsa, ugnis, virš virš 5000 žiūrovų - tokiam filmavimui reikia stipriai pasiruošti ir tik patyręs pilotas gali filmuoti.',
     stats: [
       { label: 'Kamera', value: 'DJI o4 pro' },
@@ -95,8 +98,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     categories: ['events', 'commercials', 'action'],
     location: 'Vilnius',
     year: '2026',
-    image: '/manus-storage/real-estate-fpv_775b2002.jpg',
-    videoUrl: '/images/hero2-1.mp4',
+    thumbnail: '/manus-storage/real-estate-fpv_775b2002.jpg',
+    lowVideoUrl: '/videos/portfolio/vgc-2026-720p50.mp4',
+    highVideoUrl: '/videos/portfolio/vgc-2026-1080p60.mp4',
     description: 'MTB dviratininkų sekimas miške varžybų metu. Jokio pavojaus lenktyninkams - propeleriai apsaugoti minkštais gaubtais. Viskas realu, jokio DI.',
     stats: [
       { label: 'Drono tipas', value: 'Bee25' },
@@ -111,8 +115,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     categories: ['real-estate', 'commercials'],
     location: 'Tautvydo Dvaras',
     year: '2026',
-    image: '/manus-storage/event-livestream-fpv_4273f4e1.jpg',
-    videoUrl: '/images/comparison-fpv.mp4',
+    thumbnail: '/manus-storage/event-livestream-fpv_4273f4e1.jpg',
+    lowVideoUrl: '/videos/portfolio/tautvydo-dvaras-720p50.mp4',
+    highVideoUrl: '/videos/portfolio/tautvydo-dvaras-1080p60.mp4',
     description: 'Sklandus įskridimas į Dvarą-sodybą, praskridimas per koridorius ir išskridimas į lauką.',
     stats: [
       { label: 'Pasiruošimo laikas', value: '2 val' },
@@ -127,8 +132,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     categories: ['commercials'],
     location: 'Kauno LEZ',
     year: '2025',
-    image: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
-    videoUrl: '/images/hero2-1.mp4',
+    thumbnail: '/manus-storage/commercial-factory-fpv_f410793a.jpg',
+    lowVideoUrl: '/videos/portfolio/industrial-robotics-reel-720p50.mp4',
+    highVideoUrl: '/videos/portfolio/industrial-robotics-reel-1080p60.mp4',
     description: 'Skrydis tarp robotizuotų staklių rankų, aukštų stelažų ir automatinių kroviklių. Sukuria pažangios, futuristinės gamyklos įvaizdį B2B partneriams ir investuotojams.',
     stats: [
       { label: 'Skrydžio zona', value: 'Pramoninis cechas' },
